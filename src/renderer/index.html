@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; script-src 'self';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arc Lite</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <header class="sidebar__header">
+        <div class="brand">
+          <span class="brand__dot brand__dot--purple"></span>
+          <span class="brand__dot brand__dot--orange"></span>
+          <span class="brand__dot brand__dot--blue"></span>
+          <strong>Arc Lite</strong>
+        </div>
+        <div class="controls">
+          <button id="theme-toggle" class="ghost">🌗</button>
+        </div>
+      </header>
+
+      <section class="command">
+        <input id="command-input" type="text" placeholder="Jump to URL or search" autocomplete="off">
+        <div class="command__actions">
+          <button id="nav-back" class="ghost" title="Back">←</button>
+          <button id="nav-forward" class="ghost" title="Forward">→</button>
+          <button id="nav-reload" class="ghost" title="Reload">⟳</button>
+        </div>
+      </section>
+
+      <section class="workspaces">
+        <div class="section-title">ワークスペース</div>
+        <div class="workspace-list">
+          <button class="pill is-active">メイン</button>
+          <button class="pill">開発</button>
+          <button class="pill">調査</button>
+        </div>
+      </section>
+
+      <section class="tabs">
+        <div class="section-title">ピン留め</div>
+        <ul class="tab-list pinned">
+          <li>Docs</li>
+          <li>メール</li>
+        </ul>
+        <div class="section-title">タブ</div>
+        <ul class="tab-list" id="tab-list">
+          <li class="active">Getting Started</li>
+          <li>設計メモ</li>
+          <li>Issue Tracker</li>
+        </ul>
+      </section>
+
+      <section class="history">
+        <div class="section-title">履歴 / 最近閉じた</div>
+        <ul class="muted-list">
+          <li>昨夜: Design inspiration</li>
+          <li>昨日: Electron docs</li>
+        </ul>
+      </section>
+
+      <section class="bookmarks">
+        <div class="section-title">ブックマーク</div>
+        <ul class="muted-list">
+          <li>Tech Blog</li>
+          <li>リファレンス</li>
+        </ul>
+      </section>
+
+      <section class="downloads">
+        <div class="section-title">ダウンロード</div>
+        <ul class="muted-list">
+          <li>あとで表示</li>
+        </ul>
+      </section>
+
+      <section class="command-palette">
+        <div class="section-title">検索 / コマンド</div>
+        <ul class="muted-list">
+          <li>⌘K でコマンドパレット</li>
+          <li>⌘1-9 でワークスペース切替</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="viewport">
+      <div class="placeholder">
+        <h1>Arc風ミニマルブラウザ</h1>
+        <p>右側に BrowserView で Web コンテンツを表示します。</p>
+        <p>左のコマンドバーから URL を入力してみてください。</p>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="./renderer.js"></script>
+</body>
+</html>
